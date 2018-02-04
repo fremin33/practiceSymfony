@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>Practice Bundle</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="{{ path('homepage') }}" class="tooltipped" data-tooltip="Revenir à l'accueil">Accueil</a>
+                </li>
+                <li>
+                    <a href="{{ path('produit' , {'produit': 'test'}) }}">Exo 1 </a>
+                </li>
+                <li>
+                    <a href="{{ path('produits') }}" class="tooltipped" data-tooltip="Exercice 1bis">Liste Produits</a>
+                </li>
+                <li>
+                    <a href="{{ path('categories') }}" class="tooltipped" data-tooltip="Exercice 2">Liste Categories</a>
+                </li>
+                <li>
+                    <a href="{{ path('ajoutProduit') }}" class="tooltipped" data-tooltip="Exercice 3">Ajout produit</a>
+                </li>
+                <li>
+                    <a href="{{ path('categorie_index') }}" class="tooltipped" data-tooltip="Exercice 4">exo4</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    {% block body %} {% endblock body %}
+    <footer>
+        <p>Année Universitaire 2017 | 2018 - DFS</p>
+    </footer>
+</body>
+
+</html>
